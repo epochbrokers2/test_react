@@ -6,6 +6,7 @@ import "./index.css";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import TaskApp from "./components/TaskApp";
+import Basic from "./components/Basic/Basic";
 
 const router = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
             {
                 path: "react-context",
                 element: <TaskApp />,
+            },
+            {
+                path: "basic",
+                element: <Basic />,
             },
         ],
     },

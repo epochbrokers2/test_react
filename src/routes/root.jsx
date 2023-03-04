@@ -32,6 +32,9 @@ export default function Root() {
                         <li>
                             <Link to={`react-context`}>useContext</Link>
                         </li>
+                        <li>
+                            <Link to={`basic`}>Basic</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

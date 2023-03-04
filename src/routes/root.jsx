@@ -35,6 +35,9 @@ export default function Root() {
                         <li>
                             <Link to={`basic`}>Basic</Link>
                         </li>
+                        <li>
+                            <Link to={`tic-toc-toe`}>Tic-Tac-Toe</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

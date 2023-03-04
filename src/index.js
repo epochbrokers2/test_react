@@ -7,6 +7,7 @@ import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import TaskApp from "./components/TaskApp";
 import Basic from "./components/Basic/Basic";
+import TictacToe from "./components/TictacToe/TictacToe";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: "basic",
                 element: <Basic />,
+            },
+            {
+                path: "tic-toc-toe",
+                element: <TictacToe />,
             },
         ],
     },

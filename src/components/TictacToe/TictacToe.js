@@ -42,6 +42,7 @@ const TictacToe = () => {
                     squares={currentSquares}
                     onPlay={handlePlay}
                 />
+                <h5>You are at move {currentMove}</h5>
             </div>
             <div className="game-info">
                 <ol>{moves}</ol>

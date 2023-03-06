@@ -1,5 +1,5 @@
 import Square from "./Square";
-export default function Board({xIsNext, squares, onPlay}) {
+export default function Board({ xIsNext, squares, onPlay }) {
     function handleClick(i) {
         const nextSquares = squares.slice();
         if (squares[i] || calculateWinner(squares)) {
@@ -19,10 +19,24 @@ export default function Board({xIsNext, squares, onPlay}) {
     } else {
         status = "Next Player " + (xIsNext ? "X" : "O");
     }
+    let boardSquares = [];
+    for (let row = 0; row < 3; row++) {
+        let boardRow = [];
+        for (let col = 0; col < 3; col++) {
+            boardRow.push(
+                <Square
+                    value={squares[row * 3 + col]}
+                    onSquareClick={() => handleClick(row * 3 + col)}
+                />
+            );
+        }
+        boardSquares.push(<div className="board-row">{boardRow}</div>)
+    }
     return (
         <>
             <div className="status">{status}</div>
-            <div className="board-row">
+            {boardSquares}
+            {/* <div className="board-row">
                 <Square
                     value={squares[0]}
                     onSquareClick={() => handleClick(0)}
@@ -63,7 +77,7 @@ export default function Board({xIsNext, squares, onPlay}) {
                     value={squares[8]}
                     onSquareClick={() => handleClick(8)}
                 />
-            </div>
+            </div> */}
         </>
     );
 }

@@ -5,6 +5,7 @@ import "./TictacToe.css";
 const TictacToe = () => {
     const [history, setHistory] = useState([Array(9).fill(null)]);
     const [currentMove, setCurrentMove] = useState(0);
+    const [sort, setSort] = useState(false)
     const xIsNext = currentMove % 2 === 0;
     const currentSquares = history[currentMove];
     function handlePlay(nextSquares) {
@@ -45,7 +46,8 @@ const TictacToe = () => {
                 <h5>You are at move {currentMove}</h5>
             </div>
             <div className="game-info">
-                <ol>{moves}</ol>
+                <ol>{!sort ? moves : moves.reverse()}</ol>
+                <button onClick={()=> {setSort(!sort)}}>Sort By {sort ? "Descending": "Ascending"}</button>
             </div>
             {}
         </div>

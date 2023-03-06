@@ -36,7 +36,7 @@ export default function Root() {
                             <Link to={`basic`}>Basic</Link>
                         </li>
                         <li>
-                            <Link to={`tic-toc-toe`}>Tic-Tac-Toe</Link>
+                            <Link to={`tic-toc-toe`}>Tic Tac Toe</Link>
                         </li>
                     </ul>
                 </nav>

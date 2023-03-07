@@ -8,7 +8,29 @@ import ErrorPage from "./error-page";
 import TaskApp from "./components/TaskApp";
 import Basic from "./components/Basic/Basic";
 import TictacToe from "./components/TictacToe/TictacToe";
-
+import TreeView from "./components/TreeView/TreeView";
+let treeData = {
+    lorem: {
+        ipsum: "dolor sit",
+        amet: {
+            consectetur: "adipiscing",
+            elit: [
+                "duis",
+                "vitae",
+                {
+                    semper: "orci",
+                },
+                {
+                    est: "sed ornare",
+                },
+                "etiam",
+                ["laoreet", "tincidunt"],
+                ["vestibulum", "ante"],
+            ],
+        },
+        ipsum: "primis",
+    },
+};
 const router = createBrowserRouter([
     {
         path: "/",
@@ -26,6 +48,10 @@ const router = createBrowserRouter([
             {
                 path: "tic-toc-toe",
                 element: <TictacToe />,
+            },
+            {
+                path: "treeview",
+                element: <TreeView data={treeData} name='data' />,
             },
         ],
     },

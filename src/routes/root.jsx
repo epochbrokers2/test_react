@@ -38,6 +38,9 @@ export default function Root() {
                         <li>
                             <Link to={`tic-toc-toe`}>Tic Tac Toe</Link>
                         </li>
+                        <li>
+                            <Link to={`Treeview`}>Treeview</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

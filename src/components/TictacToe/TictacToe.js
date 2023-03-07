@@ -20,7 +20,7 @@ const TictacToe = () => {
         let description;
         // const col = 1 + currentMove % 3;
         // const row = 1 + Math.floor(currentMove / 3);
-        console.log(squares)
+        // console.log(squares)
         if (move > 0) {
             description = "Go to move #" + move;
             // description = `Go to move #${move} (${row}, ${col})`;

@@ -13,11 +13,14 @@ export default function Board({ xIsNext, squares, onPlay }) {
         onPlay(nextSquares);
     }
     const winner = calculateWinner(squares);
+    let winnerLine = [];
     let status;
     if (winner) {
         status = "Winner " + winner[0];
-        console.log(winner[0])
-        console.log(winner[1])
+        winnerLine = winner[1];
+        console.log(winnerLine);
+    }else if (!squares.includes(null)) {
+        status = "Match Draw"
     } else {
         status = "Next Player " + (xIsNext ? "X" : "O");
     }
@@ -26,13 +29,20 @@ export default function Board({ xIsNext, squares, onPlay }) {
         let boardRow = [];
         for (let col = 0; col < 3; col++) {
             boardRow.push(
-                <Square key={"board_col_"+row * 3 + col}
+                <Square
+                    key={row * 3 + col}
+                    squareWin={winnerLine.includes(row * 3 + col)}
                     value={squares[row * 3 + col]}
                     onSquareClick={() => handleClick(row * 3 + col)}
+                    winnerLine={winnerLine}
                 />
             );
         }
-        boardSquares.push(<div className="board-row" key={"board_row_"+row}>{boardRow}</div>)
+        boardSquares.push(
+            <div className="board-row" key={"board_row_" + row}>
+                {boardRow}
+            </div>
+        );
     }
     return (
         <>

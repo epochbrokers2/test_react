@@ -9,6 +9,7 @@ import TaskApp from "./components/TaskApp";
 import Basic from "./components/Basic/Basic";
 import TictacToe from "./components/TictacToe/TictacToe";
 import TreeView from "./components/TreeView/TreeView";
+import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable";
 let treeData = {
     lorem: {
         ipsum: "dolor sit",
@@ -28,7 +29,7 @@ let treeData = {
                 ["vestibulum", "ante"],
             ],
         },
-        ipsum: "primis",
+        ipsum1: "primis",
     },
 };
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "treeview",
                 element: <TreeView data={treeData} name='data' />,
+            },
+            {
+                path: "thinking-view",
+                element: <FilterableProductTable />,
             },
         ],
     },

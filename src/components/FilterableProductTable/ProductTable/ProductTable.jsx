@@ -2,10 +2,18 @@ import React from "react";
 import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 
-const ProductTable = ({ products }) => {
+const ProductTable = ({ products, filterText, inStockOnly }) => {
     let rows = [];
     let lastCategory = null;
     products.forEach((product) => {
+        if (
+            product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1
+        ) {
+            return;
+        }
+        if (inStockOnly && !product.stocked) {
+            return;
+        }
         if (product.category !== lastCategory) {
             rows.push(
                 <ProductCategoryRow
@@ -13,9 +21,8 @@ const ProductTable = ({ products }) => {
                     key={product.category}
                 />
             );
-        } else {
-            rows.push(<ProductRow product={product} key={product.name} />);
         }
+        rows.push(<ProductRow product={product} key={product.name} />);
         lastCategory = product.category;
     });
     return (

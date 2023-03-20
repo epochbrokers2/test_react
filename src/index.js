@@ -10,6 +10,7 @@ import Basic from "./components/Basic/Basic";
 import TictacToe from "./components/TictacToe/TictacToe";
 import TreeView from "./components/TreeView/TreeView";
 import FilterableProductTable from "./components/FilterableProductTable/FilterableProductTable";
+import Extra from "./components/FilterableProductTable/Extra/Extra";
 let treeData = {
     lorem: {
         ipsum: "dolor sit",
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             {
                 path: "thinking-view",
                 element: <FilterableProductTable />,
+            },
+            {
+                path: "extra",
+                element: <Extra />,
             },
         ],
     },

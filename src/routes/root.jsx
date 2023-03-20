@@ -44,6 +44,9 @@ export default function Root() {
                         <li>
                             <Link to={`thinking-view`}>Thinking in React</Link>
                         </li>
+                        <li>
+                            <Link to={`extra`}>Extra</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

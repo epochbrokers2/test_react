@@ -1,17 +1,9 @@
 import { recipes } from "./data";
+import Recipe from "./Recipe";
 
 const Extra = () => {
     const listItem = recipes.map(item => (
-        <div index={item.id}>
-            <h2>{item.name}</h2>
-            <ul>
-                {
-                    item.ingredients.map(ingredient => (
-                        <li key={ingredient}>{ingredient}</li>
-                    ))
-                }
-            </ul>
-        </div>
+        <Recipe key={item.id} item={item} />
     ))
     return (
         <article>

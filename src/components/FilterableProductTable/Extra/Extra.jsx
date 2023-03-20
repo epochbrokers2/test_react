@@ -1,35 +1,22 @@
-import { people } from "./data";
-import { getImageUrl } from "./utils";
+import { recipes } from "./data";
 
 const Extra = () => {
-    let chemist = people.filter(person => person.profession === "chemist")
-    const listItems = people.map((person) => (
-        <li key={person.id}>
-            <img src={getImageUrl(person)} alt={person.name} />
-            <p>
-                <b>{person.name}:</b>
-                {" " + person.profession + " "}
-                known for {person.accomplishment}
-            </p>
-        </li>
-    ));
-    const chemistListItems = chemist.map((person) => (
-        <li key={person.id}>
-            <img src={getImageUrl(person)} alt={person.name} />
-            <p>
-                <b>{person.name}:</b>
-                {" " + person.profession + " "}
-                known for {person.accomplishment}
-            </p>
-        </li>
-    ));
+    const listItem = recipes.map(item => (
+        <div index={item.id}>
+            <h2>{item.name}</h2>
+            <ul>
+                {
+                    item.ingredients.map(ingredient => (
+                        <li key={ingredient}>{ingredient}</li>
+                    ))
+                }
+            </ul>
+        </div>
+    ))
     return (
         <article>
-            <h1>Scientists</h1>
-            <h2>All List</h2>
-            <ul>{listItems}</ul>
-            <h2>Chemist List</h2>
-            <ul>{chemistListItems}</ul>
+            <h1>Reciepeies</h1>
+            {listItem}
         </article>
     );
 };
